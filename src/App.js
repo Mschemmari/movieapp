@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MovieBox from './MovieBox.js';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Axios from 'axios';
+// import Axios from 'axios';
 
 
-Axios.get('https://pokeapi.co/api/v2/pokemon/')
-   .then((response)=>console.log(response))
-   .catch((error)=>console.log(error));
+// Axios.get('https://pokeapi.co/api/v2/pokemon/')
+//    .then((response)=>console.log(response))
+//    .catch((error)=>console.log(error));
+
+const movies = [
+ {
+ name: "Thor Ragnarok",
+ },
+ {
+ name: "Back to the Future",
+ },
+ {
+ name: "Robocop",
+ },
+];
 
 class App extends Component {
   render() {
+    const ItemsSection = movies.map((movie)=>
+      <MovieBox titulo={movies.name} key={movie}/>
+    );
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro"></p>
-        <MovieBox/>
+      <div>{ItemsSection}</div>
       </div>
     );
   }
