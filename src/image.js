@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ItemImg extends Component {
   render() {
@@ -9,5 +10,7 @@ class ItemImg extends Component {
     );
   }
 }
-
+ItemImg.propTypes = {
+  children: PropTypes.element.isRequired
+};
 export default ItemImg;

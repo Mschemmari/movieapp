@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import MovieBox from './MovieBox.js';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'material-icons/css/material-icons.min.css'
 // import Axios from 'axios';
 
 
@@ -9,27 +10,33 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //    .then((response)=>console.log(response))
 //    .catch((error)=>console.log(error));
 
-const movies = [
+var movies = [
  {
  name: "Thor Ragnarok",
+ viewed: true,
  },
  {
  name: "Back to the Future",
+ viewed: true,
  },
  {
  name: "Robocop",
+ viewed: false,
  },
 ];
-
 class App extends Component {
   render() {
-    const ItemsSection = movies.map((movie)=>
-      <MovieBox titulo={movies.name} key={movie}/>
+    const ItemsSection = movies.map((movies)=>
+      <MovieBox titulo={movies.name} key={movies.name}/>
     );
     return (
-      <div className="App">
-      <div>{ItemsSection}</div>
-      </div>
+          <div className="App">
+            <div className="container">
+              <div className="row">
+                {ItemsSection}
+              </div>
+            </div>
+          </div>
     );
   }
 }
