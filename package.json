@@ -5,10 +5,6 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
-<<<<<<< HEAD
-    "material-icons": "^0.1.0",
-=======
->>>>>>> b95825b889fdda5aa7e16a3066e7075c598701a7
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"
